@@ -1,0 +1,232 @@
+*{
+    font-family: 'Poiret One', sans-serif;
+}
+
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background: url('../media/pexels-photo-629168.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  body {
+    background-color:rgba(204, 193, 182, 0.984);
+  }
+  :root {
+    --main-color: #e0e7ed;
+    --accent-color: #b3aeac;
+  }
+
+  .text-main{
+    color: var(--main-color);
+  }
+
+  .text-accent{
+    color: var(--accent-color);
+  }
+  .bg-main{
+    background-color: var(--main-color);
+  }
+  .bg-accent{
+    background-color: var(--accent-color);
+  }
+
+  .start{
+    height: 100vh;
+    min-height: 500px;
+    background: url('../media/photo-1521489871110-81dc5a61dbda.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+  }
+
+  .btn-accent{
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+    transition: 0.4s;
+  }
+  
+  .btn-accent:hover{
+    letter-spacing: 1.5px;
+    background-color: var(--accent-color);
+    
+  }
+
+
+  .card-tree{
+    flex-shrink: 0;
+    height: 260px;
+    width: 200px;
+    clip-path: polygon(25% 0%, 89% 0, 65% 100%, 0% 100%);
+  }
+
+  .cd-slide{
+    background-size: cover;
+    background-position: center;
+    border-bottom: 8px solid rgba(120, 34, 34, 0.96);
+    position: relative;
+  }
+
+  .cd-slide1{
+    background: center url('../media/newtree-1.jpeg');
+    background-size: cover;
+  }
+  .cd-slide2{
+    background: center url('../media/tree-2.png');
+    background-size: cover;
+  }
+  .cd-slide3{
+    background: center url('../media/newtree-2.jpeg');
+    background-size: cover;
+  }
+  .cd-slide4{
+    background: center url('../media/tree-4.png');
+    background-size: cover;
+  }
+  .cd-slide5{
+    background: center url('../media/tree-1.png');
+    background-size: cover;
+  }
+
+  .cd-slide::after{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: -100%;
+    background-color:rgba(49, 123, 49, 0.442);
+    transition: 1s;
+  }
+  .cd-slide:hover::after{
+    top: 0%;
+  }
+
+  .card-inner{
+    position: absolute;
+    bottom: -50px;
+    left: 50px;
+    transition: 1s;
+    opacity: 0;
+    z-index: 20;
+    color: var(--accent-color);
+    font-weight: bold;
+  }
+
+  .cd-slide:hover .card-inner{
+    bottom: 5px;
+    opacity: 1;
+
+  }
+  .cd-texture{
+    background-image: url('../media/wood_texture.jpeg');
+    background-repeat: repeat;
+    background-size: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .cd1-texture{
+    background-image: url('../media/venature_legno_2.jpeg');
+    background-repeat: repeat;
+    background-size: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  }
+
+
+  .tree-menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; /* Centra l'icona verticalmente in alto */
+    padding-top: 20px;
+    z-index: 999;
+}
+
+.tree-menu {
+    width: 100px; 
+}
+
+.tree-icon {
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease-in-out; /* Aggiungi transizione per l'animazione */
+    color: rgba(120, 34, 34, 0.96);
+}
+
+.menu-items {
+    position: absolute;
+    top: calc(100% + 10px); /* Posiziona il menu sotto l'icona */
+    left: 49%;
+    transform: translateX(-50%) scaleY(0); /* Centra il menu orizzontalmente e nascondilo verticalmente */
+    background-color:rgba(149, 127, 127, 0.96);
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out; /* Aggiungi transizione per l'animazione */
+}
+
+.menu-items.open {
+    transform: translateX(-50%) scaleY(1); /* Apri il menu */
+}
+
+.menu-items li {
+    list-style-type: none;
+    margin: 5px;
+    display: inline-block; /* Rendi le voci di menu disposte orizzontalmente */
+}
+
+.menu-items li a {
+    text-decoration: none;
+    color: black; /* Sostituisci con il colore del testo desiderato */
+    padding: 5px 10px;
+}
+
+.menu-items li a:hover {
+  color: #f8f2f2; /* Colore del testo al passaggio del mouse */
+  background-color: rgb(0, 90, 0); /* Colore di sfondo al passaggio del mouse */
+  border-radius: 20px; /* Arrotondamento dei bordi */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra */
+  transform: translateY(-2px); /* Traslazione verso l'alto */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transizioni fluide */
+}
+
+
+.rotate-icon {
+  transform: rotate(180deg); /* Ruota l'icona di 180 gradi */
+  display: inline-block; /* Assicurati che l'icona mantenga le dimensioni originali durante la rotazione */
+  transition: transform 0.3s ease-in-out; /* Aggiungi una transizione per una rotazione fluida */
+}
+
+.foot{
+  background-image: url('../media/legno-footer.jpeg');
+  background-repeat: repeat;
+  background-size: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.your-experience{
+  background-image: url('../media/form.webp');
+  border: 2px solid #130e0d;
+  color: rgba(154, 43, 12, 0.863);
+}
+
+.your-experience:focus {
+  border: 4px solid rgb(100, 70, 28); /* Cambia il colore del bordo e la sua larghezza */
+}
+
+.form-control:focus {
+  box-shadow: none;   /* Rimuove l'ombra */
+}
+
+.color-form{
+  color: rgba(154, 43, 12, 0.863);
+  font-weight:bolder;
+}
